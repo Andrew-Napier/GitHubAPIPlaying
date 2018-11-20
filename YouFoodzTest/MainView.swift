@@ -36,6 +36,12 @@ class MainView: UITableViewController {
                             target: self,
                             action: #selector(refresh))
     }
+    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        let persist = listBuilder as? DataPersistanceProtocol
+        persist?.save()
+    }
 
 /* Side note: I prefer to use extensions (as per the ListBuilder) for implementing
    delegates and protocols, but didn't get there with this class
