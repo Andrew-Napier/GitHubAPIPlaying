@@ -9,6 +9,8 @@
 import UIKit
 
 class ListBuilder: NSObject {
+    static let dataUpdated = Notification.Name("dataUpdated")
+    
     public var repositoryList = [RepositoryModel]()
     
     public func Refresh(_ comms : Comms) {
@@ -20,6 +22,8 @@ class ListBuilder: NSObject {
         for item in response.items {
             repositoryList.append(item)
         }
+        // TODO: Sort the list here.
+        NotificationCenter.default.post(name: ListBuilder.dataUpdated, object: nil)
     }
 }
 

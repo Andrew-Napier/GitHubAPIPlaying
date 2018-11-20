@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" editingAccessoryType="detailButton" rowHeight="112" id="KGk-i7-Jjw" customClass="RepositoryTableViewCell" customModule="YouFoodzTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Repository Name" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbN-gk-yXV">
+                        <rect key="frame" x="16" y="16" width="289" height="32"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aio-CI-Mfe">
+                        <rect key="frame" x="16" y="44" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3G-I8-6dB">
+                        <rect key="frame" x="16" y="64" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxz-CL-Bse">
+                        <rect key="frame" x="16" y="85" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="X3G-I8-6dB" firstAttribute="top" secondItem="aio-CI-Mfe" secondAttribute="bottom" constant="-1" id="2fa-og-BHr"/>
+                    <constraint firstItem="X3G-I8-6dB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7MX-1Y-xJc"/>
+                    <constraint firstItem="aio-CI-Mfe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DP6-MJ-F0N"/>
+                    <constraint firstItem="lxz-CL-Bse" firstAttribute="top" secondItem="X3G-I8-6dB" secondAttribute="bottom" id="EP3-3M-Dev"/>
+                    <constraint firstItem="lbN-gk-yXV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ReQ-aJ-d2R"/>
+                    <constraint firstItem="lbN-gk-yXV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15.5" id="SRn-Wn-LgV"/>
+                    <constraint firstAttribute="trailing" secondItem="lbN-gk-yXV" secondAttribute="trailing" constant="16" id="cmu-Z4-TeQ"/>
+                    <constraint firstItem="aio-CI-Mfe" firstAttribute="top" secondItem="lbN-gk-yXV" secondAttribute="bottom" constant="-4" id="eOE-qS-q3a"/>
+                    <constraint firstAttribute="bottom" secondItem="lxz-CL-Bse" secondAttribute="bottom" constant="5.5" id="prH-Sp-k1t"/>
+                    <constraint firstItem="lxz-CL-Bse" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="x6l-px-Mr9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblForkedIndicator" destination="aio-CI-Mfe" id="LqJ-3D-yUJ"/>
+                <outlet property="lblRepoAge" destination="lxz-CL-Bse" id="ztU-Gw-tIZ"/>
+                <outlet property="lblRepoName" destination="lbN-gk-yXV" id="1ma-65-Prl"/>
+                <outlet property="lblStargazerCount" destination="X3G-I8-6dB" id="X4B-XS-sWZ"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="79.160419790104953"/>
+        </tableViewCell>
+    </objects>
+</document>

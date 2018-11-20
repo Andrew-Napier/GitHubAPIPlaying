@@ -9,10 +9,26 @@
 import UIKit
 
 class MainView: UITableViewController {
+    let comms = Comms()
+    let listBuilder = ListBuilder()
+    let reuseIdentifier = "RepositoryTableViewCell"
+
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Establish tableview cells...
+        tableView.register(UINib(nibName: "RepositoryTableViewCell", bundle:nil),
+                           forCellReuseIdentifier: reuseIdentifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 88
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dataHasRefreshed(_:)), name: ListBuilder.dataUpdated, object: nil)
+        
+        // Initiate comms...
+        comms.delegate = listBuilder
+        comms.makeRequest()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,18 +45,32 @@ class MainView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return listBuilder.repositoryList.count
     }
-
-    /*
+    
+    // MARK: - Notification handling
+    
+    @objc func dataHasRefreshed(_ notification : NSNotification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: - Table view 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+            as? RepositoryTableViewCell
+        
+        if cell == nil {
+            // TODO: Create a cell when it can't be dequeued. (memory blank!)
+        }
+        
+        cell?.configureUsing(viewModel: listBuilder.repositoryList[indexPath.row])
+        
+        return cell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

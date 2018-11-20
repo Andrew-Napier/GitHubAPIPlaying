@@ -13,9 +13,7 @@ class Comms: NSObject {
     var commsData : Data?
     
     func makeRequest() {
-    
         let headers = ["Cache-Control": "no-cache"]
-        
         let request = NSMutableURLRequest(url:
             NSURL(string: "https://api.github.com/search/repositories?q=name:Shopify&order=asc")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
@@ -27,7 +25,12 @@ class Comms: NSObject {
         let dataTask = session.dataTask(with: request as URLRequest,
                                         completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                self.delegate?.onFailure(sender: self, details: error!)
+                DispatchQueue.main.async {
+                    // My personal preference is to call delegates on the main
+                    // thread and let them handle processing on alternative
+                    // threads if they prefer...
+                    self.delegate?.onFailure(sender: self, details: error!)
+                }
             } else {
                 guard let httpResponse = response as? HTTPURLResponse else {
                     print("The response should be defined, when no error occurred")
@@ -36,7 +39,9 @@ class Comms: NSObject {
                     return
                 }
                 self.commsData = data
-                self.delegate?.onSuccess(sender: self, results: httpResponse)
+                DispatchQueue.main.async {
+                    self.delegate?.onSuccess(sender: self, results: httpResponse)
+                }
             }
         })
         

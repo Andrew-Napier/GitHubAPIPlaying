@@ -16,9 +16,10 @@
 		499208ED21A363B2009D40EB /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499208EB21A363B2009D40EB /* MainView.xib */; };
 		499208EF21A36558009D40EB /* Comms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208EE21A36558009D40EB /* Comms.swift */; };
 		499208F221A36738009D40EB /* CommsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F121A36738009D40EB /* CommsDelegate.swift */; };
-		499208F521A36B9B009D40EB /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F421A36B9B009D40EB /* MasterController.swift */; };
 		499208F721A36C81009D40EB /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F621A36C81009D40EB /* ListBuilder.swift */; };
 		499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F821A36DFB009D40EB /* RepositoryModels.swift */; };
+		49AB4FDF21A3CDAF00DE5179 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB4FDD21A3CDAF00DE5179 /* RepositoryTableViewCell.swift */; };
+		49AB4FE021A3CDAF00DE5179 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AB4FDE21A3CDAF00DE5179 /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +46,10 @@
 		499208EB21A363B2009D40EB /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		499208EE21A36558009D40EB /* Comms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comms.swift; sourceTree = "<group>"; };
 		499208F121A36738009D40EB /* CommsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsDelegate.swift; sourceTree = "<group>"; };
-		499208F421A36B9B009D40EB /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		499208F621A36C81009D40EB /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
 		499208F821A36DFB009D40EB /* RepositoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModels.swift; sourceTree = "<group>"; };
+		49AB4FDD21A3CDAF00DE5179 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		49AB4FDE21A3CDAF00DE5179 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		499208C721A35352009D40EB /* YouFoodzTest */ = {
 			isa = PBXGroup;
 			children = (
+				49AB4FDC21A3C15100DE5179 /* Views */,
 				499208F321A36B80009D40EB /* Controller */,
 				499208F021A36562009D40EB /* Models */,
 				499208C821A35352009D40EB /* AppDelegate.swift */,
@@ -125,9 +128,18 @@
 		499208F321A36B80009D40EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				499208F421A36B9B009D40EB /* MasterController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49AB4FDC21A3C15100DE5179 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49AB4FDD21A3CDAF00DE5179 /* RepositoryTableViewCell.swift */,
+				49AB4FDE21A3CDAF00DE5179 /* RepositoryTableViewCell.xib */,
+			);
+			name = Views;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +226,7 @@
 				499208E921A353AA009D40EB /* Checklist.rtf in Resources */,
 				499208D021A35353009D40EB /* Assets.xcassets in Resources */,
 				499208ED21A363B2009D40EB /* MainView.xib in Resources */,
+				49AB4FE021A3CDAF00DE5179 /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +247,8 @@
 				499208CB21A35352009D40EB /* ViewController.swift in Sources */,
 				499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */,
 				499208EF21A36558009D40EB /* Comms.swift in Sources */,
+				49AB4FDF21A3CDAF00DE5179 /* RepositoryTableViewCell.swift in Sources */,
 				499208EC21A363B2009D40EB /* MainView.swift in Sources */,
-				499208F521A36B9B009D40EB /* MasterController.swift in Sources */,
 				499208C921A35352009D40EB /* AppDelegate.swift in Sources */,
 				499208F221A36738009D40EB /* CommsDelegate.swift in Sources */,
 				499208F721A36C81009D40EB /* ListBuilder.swift in Sources */,
