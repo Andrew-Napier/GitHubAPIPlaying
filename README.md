@@ -2,7 +2,7 @@
 
 At this stage, the test project meets _most_ of the requirements specified.
 The missing part is the data persistence.  I've only used `CoreData` once and 
-I was hoping to avoid implementing the persistence by streaming out the array 
+I was hoping to avoid it, by implementing the persistence and streaming out the array 
 of repository models using JSON serialisation/deserialisation.
 
 This is currently not-done, although the skeleton is in place.  I've used this
