@@ -10,7 +10,7 @@ import UIKit
 
 class MainView: UITableViewController {
     let comms = Comms()
-    let listBuilder = ListBuilder()
+    let listBuilder : ListBuilderProtocol = DataPersistLayer(ListBuilder())
     let reuseIdentifier = "RepositoryTableViewCell"
 
         
@@ -57,8 +57,8 @@ class MainView: UITableViewController {
         if cell == nil {
             // TODO: Create a cell when it can't be dequeued. (memory blank!)
         }
-        
-        cell?.configureUsing(viewModel: listBuilder.getRepositoryList()[indexPath.row])
+        let model = RepositoryModelFacade(listBuilder.getRepositoryList()[indexPath.row])
+        cell?.configureUsing(viewModel: model)
         
         return cell!
     }
@@ -94,7 +94,7 @@ class MainView: UITableViewController {
     // MARK: -
     
     @objc private func refresh() {
-        comms.delegate = listBuilder
+        comms.delegate = listBuilder as? CommsDelegate
         comms.makeRequest()
     }
     

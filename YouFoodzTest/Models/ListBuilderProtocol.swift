@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ListBuilderProtocol {
-    func getRepositoryList() -> [RepositoryModelFacade]
+    func getRepositoryList() -> [RepositoryModel]
     func refresh(_ comms : Comms)
 }
 
