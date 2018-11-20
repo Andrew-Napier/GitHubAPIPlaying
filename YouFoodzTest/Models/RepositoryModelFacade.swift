@@ -38,16 +38,10 @@ class RepositoryModelFacade {
     
     func convertDurationToString(_ interval : TimeInterval) -> String {
         let days = Int((interval / 86400.0).rounded(.towardZero))
-        var remainder = interval.truncatingRemainder(dividingBy: 86400.0)
-
-        let hours = Int((remainder / 3600.0).rounded(.towardZero))
-        remainder = remainder.truncatingRemainder(dividingBy: 60.0)
-
-        let minutes = Int((remainder / 60.0).rounded(.towardZero))
-        remainder = remainder.truncatingRemainder(dividingBy: 60.0)
-
-        let seconds = Int((remainder / 60.0).rounded())
-              
+        let seconds = Int(interval.truncatingRemainder(dividingBy: 60.0).rounded(.towardZero))
+        let minutes = Int(interval.truncatingRemainder(dividingBy: 3600.0)/60.0)
+        let hours = Int(interval.truncatingRemainder(dividingBy: 86400.0)/3600.0)
+        
         return "\(days) days \(hours) hours \(minutes) minutes \(seconds) seconds"
     }
 }

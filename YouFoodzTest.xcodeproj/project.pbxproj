@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		495501BB21A3E7D60073C533 /* RepositoryModelFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */; };
 		499208C921A35352009D40EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208C821A35352009D40EB /* AppDelegate.swift */; };
-		499208CB21A35352009D40EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208CA21A35352009D40EB /* ViewController.swift */; };
 		499208D021A35353009D40EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499208CF21A35353009D40EB /* Assets.xcassets */; };
-		499208DE21A35353009D40EB /* YouFoodzTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208DD21A35353009D40EB /* YouFoodzTestTests.swift */; };
+		499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208DD21A35353009D40EB /* RepoAgeTests.swift */; };
 		499208E921A353AA009D40EB /* Checklist.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 499208E821A353AA009D40EB /* Checklist.rtf */; };
 		499208EC21A363B2009D40EB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208EA21A363B2009D40EB /* MainView.swift */; };
 		499208ED21A363B2009D40EB /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499208EB21A363B2009D40EB /* MainView.xib */; };
@@ -37,11 +36,10 @@
 		495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModelFacade.swift; sourceTree = "<group>"; };
 		499208C521A35352009D40EB /* YouFoodzTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFoodzTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499208C821A35352009D40EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		499208CA21A35352009D40EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		499208CF21A35353009D40EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499208D421A35353009D40EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499208D921A35353009D40EB /* YouFoodzTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouFoodzTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		499208DD21A35353009D40EB /* YouFoodzTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoodzTestTests.swift; sourceTree = "<group>"; };
+		499208DD21A35353009D40EB /* RepoAgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoAgeTests.swift; sourceTree = "<group>"; };
 		499208DF21A35353009D40EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499208E821A353AA009D40EB /* Checklist.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Checklist.rtf; sourceTree = "<group>"; };
 		499208EA21A363B2009D40EB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -95,10 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				49AB4FDC21A3C15100DE5179 /* Views */,
-				499208F321A36B80009D40EB /* Controller */,
 				499208F021A36562009D40EB /* Models */,
 				499208C821A35352009D40EB /* AppDelegate.swift */,
-				499208CA21A35352009D40EB /* ViewController.swift */,
 				499208CF21A35353009D40EB /* Assets.xcassets */,
 				499208D421A35353009D40EB /* Info.plist */,
 				499208EA21A363B2009D40EB /* MainView.swift */,
@@ -110,7 +106,7 @@
 		499208DC21A35353009D40EB /* YouFoodzTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				499208DD21A35353009D40EB /* YouFoodzTestTests.swift */,
+				499208DD21A35353009D40EB /* RepoAgeTests.swift */,
 				499208DF21A35353009D40EB /* Info.plist */,
 			);
 			path = YouFoodzTestTests;
@@ -126,13 +122,6 @@
 				495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		499208F321A36B80009D40EB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		49AB4FDC21A3C15100DE5179 /* Views */ = {
@@ -247,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499208CB21A35352009D40EB /* ViewController.swift in Sources */,
 				499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */,
 				495501BB21A3E7D60073C533 /* RepositoryModelFacade.swift in Sources */,
 				499208EF21A36558009D40EB /* Comms.swift in Sources */,
@@ -263,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499208DE21A35353009D40EB /* YouFoodzTestTests.swift in Sources */,
+				499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

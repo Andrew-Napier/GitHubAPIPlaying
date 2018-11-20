@@ -37,6 +37,9 @@ class MainView: UITableViewController {
                             action: #selector(refresh))
     }
 
+/* Side note: I prefer to use extensions (as per the ListBuilder) for implementing
+   delegates and protocols, but didn't get there with this class
+ */
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
