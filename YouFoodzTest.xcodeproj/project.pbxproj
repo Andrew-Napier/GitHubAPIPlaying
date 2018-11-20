@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		495501BB21A3E7D60073C533 /* RepositoryModelFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */; };
+		495501BE21A412640073C533 /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F821A36DFB009D40EB /* RepositoryModels.swift */; };
+		495501C021A413110073C533 /* ListBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501BF21A413110073C533 /* ListBuilderProtocol.swift */; };
 		499208C921A35352009D40EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208C821A35352009D40EB /* AppDelegate.swift */; };
 		499208D021A35353009D40EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499208CF21A35353009D40EB /* Assets.xcassets */; };
 		499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208DD21A35353009D40EB /* RepoAgeTests.swift */; };
@@ -34,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModelFacade.swift; sourceTree = "<group>"; };
+		495501BF21A413110073C533 /* ListBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilderProtocol.swift; sourceTree = "<group>"; };
 		499208C521A35352009D40EB /* YouFoodzTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFoodzTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499208C821A35352009D40EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499208CF21A35353009D40EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				499208F621A36C81009D40EB /* ListBuilder.swift */,
 				499208F821A36DFB009D40EB /* RepositoryModels.swift */,
 				495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */,
+				495501BF21A413110073C533 /* ListBuilderProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +245,7 @@
 				499208EF21A36558009D40EB /* Comms.swift in Sources */,
 				49AB4FDF21A3CDAF00DE5179 /* RepositoryTableViewCell.swift in Sources */,
 				499208EC21A363B2009D40EB /* MainView.swift in Sources */,
+				495501C021A413110073C533 /* ListBuilderProtocol.swift in Sources */,
 				499208C921A35352009D40EB /* AppDelegate.swift in Sources */,
 				499208F221A36738009D40EB /* CommsDelegate.swift in Sources */,
 				499208F721A36C81009D40EB /* ListBuilder.swift in Sources */,
@@ -251,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495501BE21A412640073C533 /* RepositoryModels.swift in Sources */,
 				499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

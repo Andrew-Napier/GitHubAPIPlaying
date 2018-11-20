@@ -47,7 +47,7 @@ class MainView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listBuilder.repositoryList.count
+        return listBuilder.getRepositoryList().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +58,7 @@ class MainView: UITableViewController {
             // TODO: Create a cell when it can't be dequeued. (memory blank!)
         }
         
-        cell?.configureUsing(viewModel: listBuilder.repositoryList[indexPath.row])
+        cell?.configureUsing(viewModel: listBuilder.getRepositoryList()[indexPath.row])
         
         return cell!
     }
@@ -68,15 +68,16 @@ class MainView: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         
-        assert(index >= 0 && index < listBuilder.repositoryList.count,
+        assert(index >= 0 && index < listBuilder.getRepositoryList().count,
                "The tableView is telling us a non-backed row of the table was selected")
         
-        let model = listBuilder.repositoryList[index];
+        let model = listBuilder.getRepositoryList()[index];
         
         guard let repoUrl = URL(string: model.repoUrl) else {
             return
         }
         
+        // TODO: Change this to allow easier navigation back to App.
         UIApplication.shared.open(repoUrl, options: [:]) { (success) in
             tableView.deselectRow(at: indexPath, animated: true)
         }

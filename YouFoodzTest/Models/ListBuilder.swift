@@ -8,12 +8,17 @@
 
 import UIKit
 
-class ListBuilder: NSObject {
+class ListBuilder: NSObject, ListBuilderProtocol {
     static let dataUpdated = Notification.Name("dataUpdated")
     
-    public var repositoryList = [RepositoryModelFacade]()
+    private var repositoryList = [RepositoryModelFacade]()
     
-    public func Refresh(_ comms : Comms) {
+    
+    public func getRepositoryList() -> [RepositoryModelFacade] {
+        return repositoryList
+    }
+    
+    public func refresh(_ comms : Comms) {
         comms.makeRequest()
     }
     
