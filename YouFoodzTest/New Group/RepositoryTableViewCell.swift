@@ -25,11 +25,11 @@ class RepositoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configureUsing(viewModel model : RepositoryModel) {
+    public func configureUsing(viewModel model : RepositoryModelFacade) {
         lblRepoName.text = model.name
         lblForkedIndicator.text = "Fork: \(model.isFork ? "Y" : "N")"
         lblStargazerCount.text = "Stargazers: \(model.stargazers)"
-        lblRepoAge.text = "err..."
+        lblRepoAge.text = "Age: \(model.getAge())"
     }
     
 }

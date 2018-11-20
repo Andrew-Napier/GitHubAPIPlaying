@@ -27,4 +27,30 @@ Does item contain:\
 \
 \
 RepositoryTableViewCell\
+lldb) po (interval/86400).rounded(.towardZero)\
+3911.0\
+\
+(lldb) po interval.truncatingRemainder(dividingBy: 86400)\
+29779.0182980299\
+\
+(lldb) po interval.remainder(dividingBy: 86400)\
+29779.0182980299\
+\
+(lldb) po Int(interval.rounded(.towardZero))\
+337940179\
+\
+(lldb) po Int(interval.rounded(.towardZero)) / 86400\
+3911\
+\
+(lldb) po Int(interval.rounded(.towardZero)) % 86400\
+29779\
+\
+(lldb) po (Int(interval.rounded(.towardZero)) % 86400) % 3600\
+979\
+\
+(lldb) po (Int(interval.rounded(.towardZero)) % 86400) / 3600\
+8\
+\
+(lldb) po ((Int(interval.rounded(.towardZero)) % 86400) % 3600) / 60\
+16\
 }

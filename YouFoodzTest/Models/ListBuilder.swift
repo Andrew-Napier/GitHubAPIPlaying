@@ -11,7 +11,7 @@ import UIKit
 class ListBuilder: NSObject {
     static let dataUpdated = Notification.Name("dataUpdated")
     
-    public var repositoryList = [RepositoryModel]()
+    public var repositoryList = [RepositoryModelFacade]()
     
     public func Refresh(_ comms : Comms) {
         comms.makeRequest()
@@ -20,9 +20,9 @@ class ListBuilder: NSObject {
     func createRepositoryList(from response : SearchRequestResponseModel) {
         repositoryList.removeAll()
         for item in response.items {
-            repositoryList.append(item)
+            repositoryList.append(RepositoryModelFacade(item))
         }
-        // TODO: Sort the list here.
+        repositoryList = repositoryList.sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
         NotificationCenter.default.post(name: ListBuilder.dataUpdated, object: nil)
     }
 }
