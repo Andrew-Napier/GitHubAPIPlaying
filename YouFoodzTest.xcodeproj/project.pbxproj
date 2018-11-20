@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		499208C921A35352009D40EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208C821A35352009D40EB /* AppDelegate.swift */; };
 		499208CB21A35352009D40EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208CA21A35352009D40EB /* ViewController.swift */; };
-		499208CE21A35352009D40EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499208CC21A35352009D40EB /* Main.storyboard */; };
 		499208D021A35353009D40EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499208CF21A35353009D40EB /* Assets.xcassets */; };
-		499208D321A35353009D40EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499208D121A35353009D40EB /* LaunchScreen.storyboard */; };
 		499208DE21A35353009D40EB /* YouFoodzTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208DD21A35353009D40EB /* YouFoodzTestTests.swift */; };
+		499208E921A353AA009D40EB /* Checklist.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 499208E821A353AA009D40EB /* Checklist.rtf */; };
+		499208EC21A363B2009D40EB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208EA21A363B2009D40EB /* MainView.swift */; };
+		499208ED21A363B2009D40EB /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499208EB21A363B2009D40EB /* MainView.xib */; };
+		499208EF21A36558009D40EB /* Comms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208EE21A36558009D40EB /* Comms.swift */; };
+		499208F221A36738009D40EB /* CommsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F121A36738009D40EB /* CommsDelegate.swift */; };
+		499208F521A36B9B009D40EB /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F421A36B9B009D40EB /* MasterController.swift */; };
+		499208F721A36C81009D40EB /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F621A36C81009D40EB /* ListBuilder.swift */; };
+		499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F821A36DFB009D40EB /* RepositoryModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +35,19 @@
 		499208C521A35352009D40EB /* YouFoodzTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFoodzTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499208C821A35352009D40EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499208CA21A35352009D40EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		499208CD21A35352009D40EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		499208CF21A35353009D40EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		499208D221A35353009D40EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		499208D421A35353009D40EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499208D921A35353009D40EB /* YouFoodzTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouFoodzTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		499208DD21A35353009D40EB /* YouFoodzTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoodzTestTests.swift; sourceTree = "<group>"; };
 		499208DF21A35353009D40EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499208E821A353AA009D40EB /* Checklist.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Checklist.rtf; sourceTree = "<group>"; };
+		499208EA21A363B2009D40EB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		499208EB21A363B2009D40EB /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		499208EE21A36558009D40EB /* Comms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comms.swift; sourceTree = "<group>"; };
+		499208F121A36738009D40EB /* CommsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsDelegate.swift; sourceTree = "<group>"; };
+		499208F421A36B9B009D40EB /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
+		499208F621A36C81009D40EB /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
+		499208F821A36DFB009D40EB /* RepositoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 		499208BC21A35352009D40EB = {
 			isa = PBXGroup;
 			children = (
+				499208E821A353AA009D40EB /* Checklist.rtf */,
 				499208C721A35352009D40EB /* YouFoodzTest */,
 				499208DC21A35353009D40EB /* YouFoodzTestTests */,
 				499208C621A35352009D40EB /* Products */,
@@ -77,12 +90,14 @@
 		499208C721A35352009D40EB /* YouFoodzTest */ = {
 			isa = PBXGroup;
 			children = (
+				499208F321A36B80009D40EB /* Controller */,
+				499208F021A36562009D40EB /* Models */,
 				499208C821A35352009D40EB /* AppDelegate.swift */,
 				499208CA21A35352009D40EB /* ViewController.swift */,
-				499208CC21A35352009D40EB /* Main.storyboard */,
 				499208CF21A35353009D40EB /* Assets.xcassets */,
-				499208D121A35353009D40EB /* LaunchScreen.storyboard */,
 				499208D421A35353009D40EB /* Info.plist */,
+				499208EA21A363B2009D40EB /* MainView.swift */,
+				499208EB21A363B2009D40EB /* MainView.xib */,
 			);
 			path = YouFoodzTest;
 			sourceTree = "<group>";
@@ -94,6 +109,25 @@
 				499208DF21A35353009D40EB /* Info.plist */,
 			);
 			path = YouFoodzTestTests;
+			sourceTree = "<group>";
+		};
+		499208F021A36562009D40EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				499208EE21A36558009D40EB /* Comms.swift */,
+				499208F121A36738009D40EB /* CommsDelegate.swift */,
+				499208F621A36C81009D40EB /* ListBuilder.swift */,
+				499208F821A36DFB009D40EB /* RepositoryModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		499208F321A36B80009D40EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				499208F421A36B9B009D40EB /* MasterController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499208D321A35353009D40EB /* LaunchScreen.storyboard in Resources */,
+				499208E921A353AA009D40EB /* Checklist.rtf in Resources */,
 				499208D021A35353009D40EB /* Assets.xcassets in Resources */,
-				499208CE21A35352009D40EB /* Main.storyboard in Resources */,
+				499208ED21A363B2009D40EB /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +232,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				499208CB21A35352009D40EB /* ViewController.swift in Sources */,
+				499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */,
+				499208EF21A36558009D40EB /* Comms.swift in Sources */,
+				499208EC21A363B2009D40EB /* MainView.swift in Sources */,
+				499208F521A36B9B009D40EB /* MasterController.swift in Sources */,
 				499208C921A35352009D40EB /* AppDelegate.swift in Sources */,
+				499208F221A36738009D40EB /* CommsDelegate.swift in Sources */,
+				499208F721A36C81009D40EB /* ListBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,25 +259,6 @@
 			targetProxy = 499208DA21A35353009D40EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		499208CC21A35352009D40EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				499208CD21A35352009D40EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		499208D121A35353009D40EB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				499208D221A35353009D40EB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		499208E021A35353009D40EB /* Debug */ = {
@@ -363,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53DZJ85MNU;
 				INFOPLIST_FILE = YouFoodzTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53DZJ85MNU;
 				INFOPLIST_FILE = YouFoodzTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
