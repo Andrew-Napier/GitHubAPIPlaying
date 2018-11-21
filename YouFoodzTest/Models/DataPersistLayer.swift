@@ -20,23 +20,74 @@ protocol DataPersistanceProtocol {
    provide the original functionality.
 */
 class DataPersistLayer : DataPersistanceProtocol {
-    func load() {
-        // TODO: write loading code...
-    }
-    
-    func save() {
-        // TODO: write saving code...
-    }
-    
     var listBuilder : ListBuilderProtocol?
     var repositoryList = [RepositoryModel]()
-    
+
     convenience init(_ builder : ListBuilderProtocol) {
         self.init()
         listBuilder = builder
         load()
     }
     
+    private func backgroundSave() {
+        DispatchQueue.init(label: "workerThread").async {
+            self.save()
+        }
+    }
+
+    private func getStorageUrl() -> URL? {
+        let path = FileManager.default.urls(for: .cachesDirectory,
+                                 in: .userDomainMask).first
+        let file = path?.appendingPathComponent("cache.dat", isDirectory: false)
+        
+        return file
+    }
+    
+    func load() {
+        guard let url = getStorageUrl() else {
+            // if we can't retrieve cached data, it's not the end of the world!
+            print("Storage URL was irretrievable (load)")
+            return
+        }
+        
+        if FileManager.default.fileExists(atPath: url.absoluteString) {
+            guard let data = FileManager.default.contents(atPath: url.absoluteString) else {
+                print("No data loaded from cache")
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                repositoryList = try decoder.decode([RepositoryModel].self, from: data)
+            } catch {
+                print("Decoding cached data failed")
+                repositoryList = [RepositoryModel]()
+            }
+        }
+    }
+    
+    func save() {
+        guard let url = getStorageUrl() else {
+            print("Storage URL was irretrievable (save)")
+            return
+        }
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(repositoryList)
+            if FileManager.default.fileExists(atPath: url.absoluteString) {
+                try FileManager.default.removeItem(at: url)
+            }
+            FileManager.default.createFile(atPath: url.absoluteString,
+                                           contents: data,
+                                           attributes: nil)
+            
+        } catch {
+            // Again, we will ignore failures to cache retrievable data.
+            // If we had some internal log mechanism, we could report the
+            // failure there.  To emulate this, I'll use print...
+            print(error.localizedDescription)
+            return
+        }
+    }
 }
 
 extension DataPersistLayer : CommsDelegate {
@@ -44,6 +95,7 @@ extension DataPersistLayer : CommsDelegate {
         (listBuilder as? CommsDelegate)?.onSuccess(sender: sender, results: data)
         if listBuilder != nil {
             repositoryList = listBuilder!.getRepositoryList()
+            backgroundSave()
         }
     }
     
