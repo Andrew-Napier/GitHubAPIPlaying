@@ -24,7 +24,10 @@ class MainView: UITableViewController {
         tableView.estimatedRowHeight = 88
 
         // Establish listeners...
-        NotificationCenter.default.addObserver(self, selector: #selector(dataHasRefreshed(_:)), name: ListBuilder.dataUpdated, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(dataHasRefreshed(_:)),
+                                               name: ListBuilder.dataUpdated,
+                                               object: nil)
         
         // Initiate comms...
         refresh()
