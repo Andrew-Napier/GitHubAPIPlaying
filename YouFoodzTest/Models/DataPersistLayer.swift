@@ -50,8 +50,8 @@ class DataPersistLayer : DataPersistanceProtocol {
             return
         }
         
-        if FileManager.default.fileExists(atPath: url.absoluteString) {
-            guard let data = FileManager.default.contents(atPath: url.absoluteString) else {
+        if FileManager.default.fileExists(atPath: url.path) {
+            guard let data = FileManager.default.contents(atPath: url.path) else {
                 print("No data loaded from cache")
                 return
             }
@@ -73,10 +73,10 @@ class DataPersistLayer : DataPersistanceProtocol {
         let encoder = JSONEncoder()
         do {
             let data = try encoder.encode(repositoryList)
-            if FileManager.default.fileExists(atPath: url.absoluteString) {
+            if FileManager.default.fileExists(atPath: url.path) {
                 try FileManager.default.removeItem(at: url)
             }
-            FileManager.default.createFile(atPath: url.absoluteString,
+            FileManager.default.createFile(atPath: url.path,
                                            contents: data,
                                            attributes: nil)
             
