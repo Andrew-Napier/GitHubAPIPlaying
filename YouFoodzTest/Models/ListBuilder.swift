@@ -10,6 +10,7 @@ import UIKit
 
 class ListBuilder: NSObject, ListBuilderProtocol {
     static let dataUpdated = Notification.Name("dataUpdated")
+    static let dataError = Notification.Name("dataError")
     
     private var repositoryList = [RepositoryModel]()
     
@@ -22,7 +23,7 @@ class ListBuilder: NSObject, ListBuilderProtocol {
         comms.makeRequest()
     }
     
-    func createRepositoryList(from response : SearchRequestResponseModel) {
+    private func createRepositoryList(from response : SearchRequestResponseModel) {
         repositoryList.removeAll()
         for item in response.items {
             repositoryList.append(item)
@@ -34,7 +35,9 @@ class ListBuilder: NSObject, ListBuilderProtocol {
 
 extension ListBuilder : CommsDelegate {
     func onFailure(sender: Comms, details error: Error) {
-        // TODO: Report failure so a UIAlertController dialogue can display error to user.
+        NotificationCenter.default.post(name: ListBuilder.dataError,
+                                        object: nil,
+                                        userInfo: ["Message" : error.localizedDescription])
     }
     
     func onSuccess(sender: Comms, results data: HTTPURLResponse) {

@@ -9,7 +9,9 @@
 import Foundation
 
 protocol DataPersistanceProtocol {
+    /// Call this to force loading repository array from cache.
     func load()
+    /// Call this to force saving of API results to a cache.
     func save()
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MainView: UITableViewController {
     let comms = Comms()
@@ -28,6 +29,10 @@ class MainView: UITableViewController {
                                                selector: #selector(dataHasRefreshed(_:)),
                                                name: ListBuilder.dataUpdated,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(dataFailedRefresh(_:)),
+                                               name: ListBuilder.dataError,
+                                               object: nil)
         
         // Initiate comms...
         refresh()
@@ -46,9 +51,6 @@ class MainView: UITableViewController {
         persist?.save()
     }
 
-/* Side note: I prefer to use extensions (as per the ListBuilder) for implementing
-   delegates and protocols, but didn't get there with this class
- */
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,9 +65,8 @@ class MainView: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
             as? RepositoryTableViewCell
         
-        if cell == nil {
-            // TODO: Create a cell when it can't be dequeued. (memory blank!)
-        }
+        assert(cell != nil, "Unable to dequeue the registered tableview cell.");
+
         let model = RepositoryModelFacade(listBuilder.getRepositoryList()[indexPath.row])
         cell?.configureUsing(viewModel: model)
         
@@ -81,15 +82,13 @@ class MainView: UITableViewController {
                "The tableView is telling us a non-backed row of the table was selected")
         
         let model = listBuilder.getRepositoryList()[index];
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+
         guard let repoUrl = URL(string: model.repoUrl) else {
             return
         }
         
-        // TODO: Change this to allow easier navigation back to App.
-        UIApplication.shared.open(repoUrl, options: [:]) { (success) in
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
+        launchSafariViewer(forUrl: repoUrl)
     }
     
     // MARK: - Notification handling
@@ -100,6 +99,22 @@ class MainView: UITableViewController {
         }
     }
     
+    @objc func dataFailedRefresh(_ notification : NSNotification) {
+        DispatchQueue.main.async {
+            guard let info = notification.userInfo else {
+                // No user info, no error message, don't bother!
+                return
+            }
+            let message = (info["Message"] as? String) ?? "An unknown error has occurred"
+            let alert = UIAlertController(title: "Error",
+                                          message: message,
+                                          preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: -
     
     @objc private func refresh() {
@@ -107,4 +122,9 @@ class MainView: UITableViewController {
         comms.makeRequest()
     }
     
+    private func launchSafariViewer(forUrl url : URL) {
+        let webBrowser = SFSafariViewController.init(url: url)
+        self.present(webBrowser, animated: true, completion: nil)
+    }
+
 }

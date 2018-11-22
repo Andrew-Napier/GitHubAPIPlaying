@@ -10,10 +10,15 @@ import Foundation
 
 class Comms: NSObject {
     var delegate : CommsDelegate?
-    var commsData : Data?
+    private(set) var commsData : Data?
     
     func makeRequest() {
         let headers = ["Cache-Control": "no-cache"]
+        /*  Obviously, the request could be made far more generic by having a
+            parameter specify the repository you were after...  Also, I elected
+            to use the v3 API, rather than take the time to learn their GraphQL
+            for the sake of this exercise.
+        */
         let request = NSMutableURLRequest(url:
             NSURL(string: "https://api.github.com/search/repositories?q=name:Shopify&order=asc")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,

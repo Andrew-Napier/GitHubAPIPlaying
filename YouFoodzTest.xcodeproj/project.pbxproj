@@ -23,6 +23,7 @@
 		499208F921A36DFB009D40EB /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F821A36DFB009D40EB /* RepositoryModels.swift */; };
 		49AB4FDF21A3CDAF00DE5179 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB4FDD21A3CDAF00DE5179 /* RepositoryTableViewCell.swift */; };
 		49AB4FE021A3CDAF00DE5179 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AB4FDE21A3CDAF00DE5179 /* RepositoryTableViewCell.xib */; };
+		49F1110D21A686CD00260D37 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F1110C21A686CD00260D37 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		499208F821A36DFB009D40EB /* RepositoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModels.swift; sourceTree = "<group>"; };
 		49AB4FDD21A3CDAF00DE5179 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		49AB4FDE21A3CDAF00DE5179 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		49F1110C21A686CD00260D37 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F1110D21A686CD00260D37 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 				499208C721A35352009D40EB /* YouFoodzTest */,
 				499208DC21A35353009D40EB /* YouFoodzTestTests */,
 				499208C621A35352009D40EB /* Products */,
+				49F1110B21A686CD00260D37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +143,14 @@
 			);
 			name = Views;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		49F1110B21A686CD00260D37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49F1110C21A686CD00260D37 /* SafariServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
