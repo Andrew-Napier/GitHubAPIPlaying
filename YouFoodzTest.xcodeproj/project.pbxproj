@@ -11,6 +11,12 @@
 		495501BE21A412640073C533 /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F821A36DFB009D40EB /* RepositoryModels.swift */; };
 		495501C021A413110073C533 /* ListBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501BF21A413110073C533 /* ListBuilderProtocol.swift */; };
 		495501C221A418EB0073C533 /* DataPersistLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501C121A418EB0073C533 /* DataPersistLayer.swift */; };
+		495D5A9A21A8F51500719A45 /* ListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D5A9921A8F51500719A45 /* ListBuilderTests.swift */; };
+		495D5A9B21A8F57500719A45 /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F621A36C81009D40EB /* ListBuilder.swift */; };
+		495D5A9C21A8F62F00719A45 /* Comms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208EE21A36558009D40EB /* Comms.swift */; };
+		495D5A9E21A8F66900719A45 /* TestingStubComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D5A9D21A8F66900719A45 /* TestingStubComms.swift */; };
+		495D5A9F21A8F95200719A45 /* ListBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495501BF21A413110073C533 /* ListBuilderProtocol.swift */; };
+		495D5AA021A8F95F00719A45 /* CommsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208F121A36738009D40EB /* CommsDelegate.swift */; };
 		499208C921A35352009D40EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208C821A35352009D40EB /* AppDelegate.swift */; };
 		499208D021A35353009D40EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499208CF21A35353009D40EB /* Assets.xcassets */; };
 		499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499208DD21A35353009D40EB /* RepoAgeTests.swift */; };
@@ -40,6 +46,8 @@
 		495501BA21A3E7D60073C533 /* RepositoryModelFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModelFacade.swift; sourceTree = "<group>"; };
 		495501BF21A413110073C533 /* ListBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilderProtocol.swift; sourceTree = "<group>"; };
 		495501C121A418EB0073C533 /* DataPersistLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistLayer.swift; sourceTree = "<group>"; };
+		495D5A9921A8F51500719A45 /* ListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilderTests.swift; sourceTree = "<group>"; };
+		495D5A9D21A8F66900719A45 /* TestingStubComms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStubComms.swift; sourceTree = "<group>"; };
 		499208C521A35352009D40EB /* YouFoodzTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFoodzTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499208C821A35352009D40EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499208CF21A35353009D40EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +125,8 @@
 			children = (
 				499208DD21A35353009D40EB /* RepoAgeTests.swift */,
 				499208DF21A35353009D40EB /* Info.plist */,
+				495D5A9921A8F51500719A45 /* ListBuilderTests.swift */,
+				495D5A9D21A8F66900719A45 /* TestingStubComms.swift */,
 			);
 			path = YouFoodzTestTests;
 			sourceTree = "<group>";
@@ -272,8 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495D5AA021A8F95F00719A45 /* CommsDelegate.swift in Sources */,
 				495501BE21A412640073C533 /* RepositoryModels.swift in Sources */,
 				499208DE21A35353009D40EB /* RepoAgeTests.swift in Sources */,
+				495D5A9E21A8F66900719A45 /* TestingStubComms.swift in Sources */,
+				495D5A9F21A8F95200719A45 /* ListBuilderProtocol.swift in Sources */,
+				495D5A9C21A8F62F00719A45 /* Comms.swift in Sources */,
+				495D5A9A21A8F51500719A45 /* ListBuilderTests.swift in Sources */,
+				495D5A9B21A8F57500719A45 /* ListBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
